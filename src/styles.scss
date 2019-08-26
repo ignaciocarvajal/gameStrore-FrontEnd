@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+// Imports functions, variables, and mixins that are needed by other Bootstrap files
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+// Import Bootstrap Reboot
+@import "~bootstrap/scss/reboot";
+// Sass: Customize Bootstrap
+@import "variables";
+@import "reset";
+// Add the grid
+@import "~bootstrap/scss/grid";
+// Add css utilities
+@import "~bootstrap/scss/utilities";

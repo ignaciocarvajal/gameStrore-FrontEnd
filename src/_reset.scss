@@ -1,0 +1,11 @@
+// Override some of the Bootstrap styles we don't want (because it is added after all bootstraps imports)
+* {
+  &:active,
+  :focus {
+    outline: none !important; // 1
+  }
+}
+
+a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]) {
+  color: #3f51b5; // 2
+}
