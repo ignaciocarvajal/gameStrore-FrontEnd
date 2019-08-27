@@ -1,3 +1,22 @@
-<p>form-login works!</p>
-<app-change-password></app-change-password>
-<app-register-client></app-register-client>
+<div class="row justify-content-md-center">
+  <mat-card class="col-6 col-md-4">
+    <mat-card-title>Log in</mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="input">
+        <input matInput placeholder="Email">
+      </mat-form-field><br>
+      <mat-form-field class="input">
+        <input type="password" matInput placeholder="Password">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <div>
+        <a href="change-password">Cambiar contraseña</a><br>
+        <a href="register">Registrarse</a>
+      </div>
+      <div>
+        <a href=""><button mat-raised-button color="primary">Start!</button></a>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
