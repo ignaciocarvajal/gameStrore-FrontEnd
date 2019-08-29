@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListGamesComponent implements OnInit {
 
+  games: string[];
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
