@@ -11,11 +11,11 @@
     </mat-card-content>
     <mat-card-actions>
       <div>
-        <a href="change-password">Cambiar contraseña</a><br>
-        <a href="register">Registrarse</a>
+        <a [routerLink]="['/change-password']" routerLinkActive="router-link-active">Cambiar contraseña</a><br>
+        <a [routerLink]="['/register']" routerLinkActive="router-link-active">Registrarse</a>
       </div>
       <div>
-        <a href=""><button mat-raised-button color="primary">Start!</button></a>
+        <a [routerLink]="['/home']"><button mat-raised-button color="primary">Start!</button></a>
       </div>
     </mat-card-actions>
   </mat-card>
