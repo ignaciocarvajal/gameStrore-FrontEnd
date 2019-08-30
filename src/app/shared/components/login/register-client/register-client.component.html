@@ -1,7 +1,7 @@
 <div class="row justify-content-md-center m-5 animated fadeIn fast">
   <form (ngSubmit)="registerUser(formRegistro)" class="col-6 col-md-4" #formRegistro="ngForm">
     <mat-card>
-      <mat-card-title>Log in</mat-card-title>
+      <mat-card-title>Register user</mat-card-title>
       <mat-card-content>
         <span *ngIf="formRegistro.submitted && formRegistro.controls['email'].errors"
           class="text-danger animated fadeIn fast">Nickname
