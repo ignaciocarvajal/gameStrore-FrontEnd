@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from 'src/app/model/model/user.model';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
+
+import { UserModel } from 'src/app/model/model/user.model';
 import { AuthService } from 'src/app/model/objects/services/auth.service';
 
 @Component({
@@ -12,7 +16,7 @@ export class RegisterClientComponent implements OnInit {
 
   user: UserModel;
 
-  constructor(private register: AuthService) { }
+  constructor(private register: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.user = new UserModel();
@@ -23,10 +27,24 @@ export class RegisterClientComponent implements OnInit {
       return;
     }
 
+    Swal.fire({
+      allowOutsideClick: false,
+      type: 'info',
+      text: 'Wait a second please...'
+    });
+
+    Swal.showLoading();
+
     this.register.register(this.user).subscribe(resp => {
       console.log(resp);
+      Swal.close();
+      this.router.navigateByUrl('/login');
     }, (err) => {
-      console.log(err.error.error.message);
+      Swal.fire({
+        type: 'error',
+        title: 'Authentication failed',
+        text: err.error.error.message
+      });
     });
   }
 }
