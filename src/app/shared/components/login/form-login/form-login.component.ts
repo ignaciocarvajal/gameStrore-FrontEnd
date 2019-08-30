@@ -15,10 +15,15 @@ import { AuthService } from 'src/app/model/objects/services/auth.service';
 export class FormLoginComponent implements OnInit {
 
   user: UserModel = new UserModel();
+  checkRemember = false;
 
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('email')) {
+      this.user.email = localStorage.getItem('email');
+      this.checkRemember = true;
+    }
   }
 
   loginUser(form: NgForm) {
@@ -37,6 +42,9 @@ export class FormLoginComponent implements OnInit {
     this.auth.login(this.user).subscribe(resp => {
       console.log(resp);
       Swal.close();
+      if (this.checkRemember) {
+        localStorage.setItem('email', this.user.email);
+      }
       this.router.navigateByUrl('/home');
     }, (err) => {
       Swal.fire({

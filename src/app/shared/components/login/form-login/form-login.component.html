@@ -18,9 +18,11 @@
       </mat-card-content>
       <mat-card-actions>
         <div>
-          <button mat-button [routerLink]="['/change-password']" routerLinkActive="router-link-active">Change
-            password</button>
-          <button mat-button [routerLink]="['/register']" routerLinkActive="router-link-active">Register</button>
+          <mat-checkbox name="checkRemember" [(ngModel)]="checkRemember">Remember me!</mat-checkbox>
+          <br>
+          <!-- <a [routerLink]="['/change-password']" routerLinkActive="router-link-active">Change password</a> -->
+          <button mat-raised-button color="primary" [routerLink]="['/register']"
+            routerLinkActive="router-link-active">Register</button>
           <button mat-raised-button color="primary">Log in</button>
         </div>
       </mat-card-actions>
