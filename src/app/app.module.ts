@@ -1,60 +1,48 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponentComponent } from './shared/login-component/login-component.component';
-import { FormLoginComponentComponent } from './shared/components/login-component/form-login-component/form-login-component.component';
-import { LoginComponent } from './shared/components/login/login.component';
-import { FormLoginComponent } from './shared/components/login/form-login/form-login.component';
-import { RegisterClientComponent } from './shared/components/login/form-login/register-client/register-client.component';
-import { ChangePasswordComponent } from './shared/components/login/form-login/change-password/change-password.component';
-import { GamesComponent } from './shared/components/games/games.component';
-import { ListGamesComponent } from './shared/components/games/list-games/list-games.component';
-import { CreateGameComponent } from './shared/components/games/create-game/create-game.component';
-import { UpdateGameComponent } from './shared/components/games/update-game/update-game.component';
-import { DeleteGameComponent } from './shared/components/games/delete-game/delete-game.component';
-import { ImagesComponent } from './shared/components/images/images.component';
-import { UploadImagesComponent } from './shared/components/images/upload-images/upload-images.component';
-import { DeleteImagesComponent } from './shared/components/images/delete-images/delete-images.component';
-import { DownloadImageComponent } from './shared/components/images/download-image/download-image.component';
-import { ClientsComponent } from './shared/components/clients/clients.component';
-import { ListClientComponent } from './shared/components/clients/list-client/list-client.component';
-import { UpdateClientComponent } from './shared/components/clients/update-client/update-client.component';
-import { DeleteClientComponent } from './shared/components/clients/delete-client/delete-client.component';
-import { RolesComponent } from './shared/components/roles/roles.component';
+
+import { HeaderComponent } from 'src/app/shared/components/header/header.component';
+import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
+import { MaterialModule } from 'src/app/modules/material/material.module';
+import { DashboardModule } from 'src/app/modules/dashboard/dashboard.module';
+import { ProfileModule } from 'src/app/modules/profile/profile.module';
+
+import { ListGamesComponent } from 'src/app/shared/components/games/list-games/list-games.component';
+import { LoginComponent } from 'src/app/shared/components/login/login.component';
+import { FormLoginComponent } from 'src/app/shared/components/login/form-login/form-login.component';
+import { RegisterClientComponent } from 'src/app/shared/components/login/register-client/register-client.component';
+import { ChangePasswordComponent } from 'src/app/shared/components/login/change-password/change-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponentComponent,
-    FormLoginComponentComponent,
+    HeaderComponent,
+    FooterComponent,
+    ListGamesComponent,
     LoginComponent,
     FormLoginComponent,
     RegisterClientComponent,
-    ChangePasswordComponent,
-    GamesComponent,
-    ListGamesComponent,
-    CreateGameComponent,
-    UpdateGameComponent,
-    DeleteGameComponent,
-    ImagesComponent,
-    UploadImagesComponent,
-    DeleteImagesComponent,
-    DownloadImageComponent,
-    ClientsComponent,
-    ListClientComponent,
-    UpdateClientComponent,
-    DeleteClientComponent,
-    RolesComponent
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
+    DashboardModule,
+    ProfileModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -1,0 +1,13 @@
+<mat-toolbar class="header">
+  <mat-icon>games</mat-icon>
+  <span [routerLink]="['/home']" routerLinkActive="router-link-active">Game Store</span>
+  <span class="space"></span>
+  <button mat-icon-button [matMenuTriggerFor]="auth">
+    <mat-icon>menu</mat-icon>
+    <mat-menu #auth="matMenu">
+      <button mat-menu-item [routerLink]="['/login']" routerLinkActive="router-link-active">Log In</button>
+      <button mat-menu-item [routerLink]="['/register']" routerLinkActive="router-link-active">Register</button>
+      <button mat-menu-item [routerLink]="['/login']" routerLinkActive="router-link-active" (click)="logout()">Log Out</button>
+    </mat-menu>
+  </button>
+</mat-toolbar>

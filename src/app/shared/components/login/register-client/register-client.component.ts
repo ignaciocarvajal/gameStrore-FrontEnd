@@ -8,25 +8,21 @@ import { UserModel } from 'src/app/model/model/user.model';
 import { AuthService } from 'src/app/model/objects/services/auth.service';
 
 @Component({
-  selector: 'app-form-login',
-  templateUrl: './form-login.component.html',
-  styleUrls: ['./form-login.component.scss']
+  selector: 'app-register-client',
+  templateUrl: './register-client.component.html',
+  styleUrls: ['./register-client.component.scss']
 })
-export class FormLoginComponent implements OnInit {
+export class RegisterClientComponent implements OnInit {
 
-  user: UserModel = new UserModel();
-  checkRemember = false;
+  user: UserModel;
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private register: AuthService, private router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('email')) {
-      this.user.email = localStorage.getItem('email');
-      this.checkRemember = true;
-    }
+    this.user = new UserModel();
   }
 
-  loginUser(form: NgForm) {
+  registerUser(form: NgForm) {
     if (form.invalid) {
       return;
     }
@@ -39,13 +35,10 @@ export class FormLoginComponent implements OnInit {
 
     Swal.showLoading();
 
-    this.auth.login(this.user).subscribe(resp => {
+    this.register.register(this.user).subscribe(resp => {
       console.log(resp);
       Swal.close();
-      if (this.checkRemember) {
-        localStorage.setItem('email', this.user.email);
-      }
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/login');
     }, (err) => {
       Swal.fire({
         type: 'error',

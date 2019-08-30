@@ -1,0 +1,35 @@
+<div class="row justify-content-md-center m-5 animated fadeIn fast">
+  <form (ngSubmit)="registerUser(formRegistro)" class="col-6 col-md-4" #formRegistro="ngForm">
+    <mat-card>
+      <mat-card-title>Register user</mat-card-title>
+      <mat-card-content>
+        <span *ngIf="formRegistro.submitted && formRegistro.controls['email'].errors"
+          class="text-danger animated fadeIn fast">Nickname
+          required</span>
+        <mat-form-field class="input m-b-16">
+          <input matInput placeholder="Nickname" [(ngModel)]="user.nickname" name="nickname" required required
+            minlength="5" maxlength="8">
+        </mat-form-field><br>
+
+        <span *ngIf="formRegistro.submitted && formRegistro.controls['email'].errors"
+          class="text-danger animated fadeIn fast">Email
+          required</span>
+        <mat-form-field class="input m-b-16">
+          <input type="email" matInput placeholder="Email" [(ngModel)]="user.email" name="email" required email>
+        </mat-form-field><br>
+
+        <span *ngIf="formRegistro.submitted && formRegistro.controls['email'].errors"
+          class="text-danger animated fadeIn fast">Min legth 5</span>
+        <mat-form-field class="input m-b-16">
+          <input type="password" matInput placeholder="Password" [(ngModel)]="user.password" name="password" required
+            minlength="5" maxlength="8">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="rows">
+        <button mat-raised-button color="primary" [routerLink]="['/login']" routerLinkActive="router-link-active">I
+          preder log in</button>
+        <button mat-raised-button color="primary" class="md-5">Create account</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

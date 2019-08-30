@@ -1,15 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+/* Pre-built theme */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 // Imports functions, variables, and mixins that are needed by other Bootstrap files
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+
 // Import Bootstrap Reboot
 @import "~bootstrap/scss/reboot";
+
 // Sass: Customize Bootstrap
 @import "variables";
 @import "reset";
+
 // Add the grid
 @import "~bootstrap/scss/grid";
+
 // Add css utilities
 @import "~bootstrap/scss/utilities";
+
+// Icons angular material
+@import "~material-design-icons/iconfont/material-icons.css";
+
+// Rules for sizing the icon.
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+html {
+  overflow: hidden;
+}
+
+.header {
+  height: 55px;
+}
+
+.input {
+  width: 100%;
+}
+
+.animated {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
